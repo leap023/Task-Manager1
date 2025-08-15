@@ -88,3 +88,52 @@
      + Regular security audits and updates
      + Principle of least privilege
      + Error handling without information disclosure
+
+ * Task Manager
+
+    A simple task manager frontend (Vite + Tailwind) with a mock REST API powered by JSON Server.
+    
+    1. Setup Instructions
+    Prerequisites
+    
+    Node.js 18+ and npm
+    -Create Project
+     npm create vue@latest
+    -Install
+    npm install
+   -Run the mock API (JSON Server)
+      +common script if it's defined in package.json
+    npm run server
+      + or run directly if no script yet:
+    npx json-server --watch db.json --routes routes.json --port 3000
+  -Start the frontend (Vite)
+    npm run dev
+    
+    
+    Frontend defaults to: http://localhost:5173 (Vite default)
+    
+    API defaults to: http://localhost:3000 (JSON Server)
+
+   2. API Endpoints
+
+    JSON Server exposes standard CRUD endpoints for each collection in db.json. This project typically includes tasks and users (see db.json). Common endpoints:
+    
+    -Tasks 
+    + GET /tasks – list tasks
+    + GET /tasks/:id – get a task
+    + POST /tasks – create task
+    + PUT /tasks/:id or PATCH /tasks/:id – update task 
+    + DELETE /tasks/:id – delete task
+  
+  - Users
+    + GET /users
+    + GET /users/:id
+    + POST /users
+    + PUT/PATCH /users/:id
+    + DELETE /users/:id
+  3. Tools / Libraries 
+    + Vite — frontend dev/build tool
+    + Tailwind CSS — utility-first CSS framework
+    + JSON Server — mock REST API using db.json and routes.json
+    + Node.js + npm — runtime and package manager
+    (These are visible from the repository’s file structure: vite.config.js, tailwind.config.js, db.json, routes.json, package.json.)
